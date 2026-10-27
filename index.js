@@ -141,4 +141,10 @@ app.put(
         },
     );
 
+    // if route tidak ditemukan
+app.use((req, res) => {
+    return errorResponse(res, 'Endpoint tidak ditemukan', null, 404)
+})
+
+
     
