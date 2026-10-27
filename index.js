@@ -127,6 +127,7 @@ app.put(
         ), 
         async (req, res) => {
             const {id} = req.params;
+            const {nama, nim, kelas} = req.body;
 
     
 
