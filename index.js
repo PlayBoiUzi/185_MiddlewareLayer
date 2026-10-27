@@ -43,10 +43,12 @@ function successResponse(res, message, data, status = 200) {
     })
 }
 
-function errorResponse(res, message, data, status = null) {
+function errorResponse(res, message, error = null, status = 400) {
     return res.status(status).json({
-        success: false, message, data, error: details,
-    })
+        success: false,
+        message,
+        error
+    });
 }
 
 // Joi Validation Schema
