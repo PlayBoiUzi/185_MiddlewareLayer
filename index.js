@@ -133,6 +133,12 @@ app.put(
                 'UPDATE biodata SET nama=$1, nim=$2, kelas=$3 WHERE id=$4 RETURNING *',
                 [nama, nim, kelas, id]
             )
-x
+
+            if (result.rowCount === 0) {
+                return errorResponse(res, 'Data tidak ditemukan', null, 404)
+            }
+            return successResponse(res, 'Data berhasil diperbarui', result.rows[0])
+        },
+    );
 
     
