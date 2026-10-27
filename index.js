@@ -125,6 +125,8 @@ app.put(
             .fork(["nama", "nim", "kelas"], (field) => field.required())
             .fork(["id"], (field) => field.forbidden()),
         ), 
+        async (req, res) => {
+            const {id} = req.params;
 
     
 
